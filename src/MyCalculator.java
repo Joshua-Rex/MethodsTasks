@@ -1,11 +1,41 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class MyCalculator {
     public static void main(String[] args) {
         // Creates a new object of this class to call the non-static classes
         MyCalculator cal = new MyCalculator();
 
-        // Creates two float variables as test numbers to use in the methods
-        float num1 = 2.4537f;
-        float num2 = 16.3976f;
+        // Creates two float variables to use in the methods
+        float num1;
+        float num2;
+
+        // Created a scanner class to read the user inputs
+        Scanner reader = new Scanner(System.in);
+
+        // Used a while loop to track user validation
+        // Ensures the user enters a number for both values and stops the program from crashing
+        while (true) {
+            try {
+                System.out.print("Please enter the first number: ");
+                num1 = reader.nextFloat();
+                break;
+            } catch (InputMismatchException e) {
+                reader.nextLine();
+                System.out.println("Please enter a number.");
+            }
+        }
+        while (true) {
+            try {
+                System.out.print("Please enter the second number: ");
+                num2 = reader.nextFloat();
+                break;
+            } catch (InputMismatchException e) {
+                reader.nextLine();
+                System.out.println("Please only enter a number.");
+            }
+        }
+
 
         // Prints all the methods out to two decimal places
         System.out.println("Addition of both numbers = " + String.format("%.2f", cal.Addition(num1, num2)));
