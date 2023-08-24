@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class MyCalculator {
     public static void main(String[] args) {
-        // Creates a new object of this class to call the non-static classes
+        // Creates a new object of this class to call the non-static methods
         MyCalculator cal = new MyCalculator();
 
         // Creates two float variables to use in the methods
